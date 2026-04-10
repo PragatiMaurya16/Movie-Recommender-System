@@ -45,7 +45,7 @@ def get_recommendations(movie_title, movies_df, sim_df, num_recs=5):
     matches = movies_df[movies_df['title'].str.contains(movie_title, case=False, na=False)]
     
     if matches.empty:
-        return None, "Movie not found. Try 'Toy Story' or 'Jumanji'."
+        return None, "Movie not found. Try something else'."
     
     target_movie = matches.iloc[0]
     movie_id = target_movie['movieId']
