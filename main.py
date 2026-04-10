@@ -15,12 +15,10 @@ def setup_data():
     movies = pd.read_csv(movie_file)
     
     # 2. Check/Create Ratings File
-    # We need userId, movieId, and rating columns
     create_new = False
     if not os.path.exists(ratings_file):
         create_new = True
     else:
-        # Check if existing file has the right columns
         temp = pd.read_csv(ratings_file, nrows=1)
         if 'userId' not in temp.columns:
             create_new = True
